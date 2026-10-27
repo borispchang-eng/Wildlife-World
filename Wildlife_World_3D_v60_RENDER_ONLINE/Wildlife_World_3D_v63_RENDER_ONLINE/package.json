@@ -1,0 +1,12 @@
+{
+  "name": "wildlife-world-adventure-edition",
+  "private": true,
+  "version": "63.0.0",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --check server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
