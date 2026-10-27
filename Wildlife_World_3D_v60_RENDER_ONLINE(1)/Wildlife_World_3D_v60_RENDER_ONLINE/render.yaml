@@ -1,8 +1,0 @@
-services:
-  - type: web
-    name: wildlife-world-adventure-v60
-    runtime: node
-    plan: free
-    buildCommand: npm install
-    startCommand: npm start
-    healthCheckPath: /api/status
