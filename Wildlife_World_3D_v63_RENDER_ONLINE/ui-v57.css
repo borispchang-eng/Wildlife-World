@@ -1,0 +1,150 @@
+/* Wildlife World v57 | Adventure Edition | clean, single-language interface */
+:root{--ww57-ink:#18352d;--ww57-green:#196e52;--ww57-deep:#0e3e35;--ww57-cream:#fcfbf4;--ww57-gold:#e9b957;--ww57-edge:#d5e1d1;--ww57-shadow:0 20px 65px rgba(10,43,33,.25)}
+html,body{font-family:system-ui,-apple-system,'Segoe UI',Arial,sans-serif}
+[hidden]{display:none!important}
+#ww57-welcome *,#ww57-home *,#ww57-menu *,#ww57-top *,#ww57-actionDock *{box-sizing:border-box}
+.ww57-lang{border:1px solid rgba(20,83,67,.18);background:#fff;color:#1b5644;border-radius:999px;padding:10px 14px;font-weight:850;font-size:14px;cursor:pointer;box-shadow:0 2px 8px #102d2015;white-space:nowrap}
+.ww57-lang:focus-visible,.ww57-btn:focus-visible,.ww57-quick:focus-visible,#ww57-actionDock button:focus-visible{outline:3px solid #f5c659;outline-offset:2px}
+.ww57-btn{border:0;cursor:pointer;background:#1f7053;color:#fff;border-radius:15px;padding:14px 18px;font-size:16px;font-weight:850;min-height:49px;box-shadow:0 5px 0 #15513d;transition:transform .12s,filter .12s}
+.ww57-btn:active{transform:translateY(3px);box-shadow:0 2px 0 #15513d}
+.ww57-btn.secondary{background:#f1f6e9;color:#244637;box-shadow:none;border:1px solid #c9d7c5}
+.ww57-btn.gold{background:#e7ad45;color:#2a331e;box-shadow:0 5px 0 #ac792c}
+.ww57-muted{color:#4d675b;font-size:14px;line-height:1.5}
+/* Replace extremely dense original landing pages, while leaving underlying game logic and account nodes intact. */
+#authWelcome{background:radial-gradient(circle at 68% 16%,#f7d88f,#a1d6bc 36%,#3f927c 83%)!important;overflow:auto!important}
+#authWelcome>.auth-shell{display:none!important}
+#ww57-welcome{min-height:100dvh;display:flex;align-items:center;justify-content:center;padding:20px 18px 36px;position:relative;z-index:10}
+.ww57-welcomeCard{width:min(960px,100%);background:rgba(255,252,242,.97);color:#14372d;border:1px solid #ffffffb8;box-shadow:var(--ww57-shadow);border-radius:30px;padding:clamp(18px,3vw,34px);display:grid;grid-template-columns:1.05fr .95fr;gap:27px}
+.ww57-mark{font-size:13px;font-weight:950;letter-spacing:.16em;color:#318367}
+.ww57-welcomeCard h1{font-size:clamp(38px,6vw,68px);line-height:1.03;letter-spacing:-.05em;margin:18px 0 14px;color:#184c3d;font-weight:1000}
+.ww57-welcomeCard p{font-size:17px;max-width:520px;color:#456454;line-height:1.55}
+.ww57-welcomeArt{border-radius:22px;min-height:210px;margin-top:18px;overflow:hidden;background:linear-gradient(#74c1d3 0 38%,#b5dbb5 38% 52%,#78b67c 52% 100%);position:relative}
+.ww57-welcomeArt:before{content:'';position:absolute;width:130%;height:140px;bottom:4px;left:-10%;border-radius:50% 50% 0 0;background:#4a9f70;box-shadow:120px 21px 0 5px #3b9068,-150px 16px 0 8px #357d61}
+.ww57-welcomeArt:after{content:'🌲  🦒   🐘   🌳  🐼';position:absolute;left:10%;bottom:28px;font-size:clamp(24px,4vw,44px);filter:drop-shadow(0 7px 4px #1b4e3650)}
+.ww57-welcomeRight{display:flex;flex-direction:column;justify-content:center;gap:14px}
+.ww57-welcomeRight h2{font-size:27px;margin:0;color:#144b3a}
+.ww57-choiceArea{display:grid;gap:12px}
+#ww57-authChoices{display:grid;gap:10px}
+#ww57-authChoices .auth-pick{display:none!important}
+#ww57-authChoices .auth-pick[data-auth-choice="visitor"]{display:block!important;width:100%;background:#1e7456!important;color:white!important;border:0!important;border-radius:16px!important;min-height:67px!important;box-shadow:0 5px 0 #14533e;font-weight:900!important;text-align:center!important;cursor:pointer}
+#ww57-authChoices .auth-pick[data-auth-choice="visitor"] strong{color:white!important;font-size:20px}
+#ww57-authChoices .auth-pick[data-auth-choice="visitor"] span{display:none!important}
+#ww57-authChoices.advanced .auth-pick{display:block!important}
+#ww57-authChoices.advanced .auth-pick[data-auth-choice="visitor"]{display:none!important}
+#ww57-authChoices.advanced .auth-pick:not([data-auth-choice="visitor"]){min-height:54px!important;text-align:left!important;border-radius:12px!important;background:#f6f8ee!important;border:1px solid #cadacb!important;color:#1c483b!important;padding:12px!important;font-size:13px!important}
+#ww57-authChoices.advanced .auth-pick span{display:none!important}
+#ww57-authForm{margin-top:12px}
+#ww57-authForm .auth-form{display:grid;gap:8px;background:#f2f7ee;border-radius:15px;padding:16px;color:#204c3a}
+#ww57-authForm .auth-form[hidden]{display:none!important}
+#ww57-authForm .auth-form input{min-width:0;max-width:100%}
+.ww57-welcomeHead{display:flex;align-items:center;justify-content:space-between;gap:15px}
+#home{background:#e5f0e4!important;overflow-y:auto!important;overflow-x:hidden}
+#home .homewrap{display:none!important}
+#ww57-home{max-width:1100px;margin:0 auto;min-height:100dvh;padding:24px 20px 44px;color:var(--ww57-ink)}
+.ww57-homeTop{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:18px}
+.ww57-homeLogo{font-weight:950;letter-spacing:.02em;font-size:17px;color:#184b3c}
+.ww57-homeHero{border-radius:26px;background:linear-gradient(112deg,#105c50,#237f60 63%,#39916c);padding:clamp(20px,4vw,38px);color:#fff;display:flex;justify-content:space-between;align-items:center;gap:12px;box-shadow:var(--ww57-shadow);overflow:hidden}
+.ww57-homeHero h1{font-size:clamp(29px,4vw,47px);letter-spacing:-.035em;line-height:1.08;margin:7px 0 11px;color:#fff}
+.ww57-homeHero p{font-size:15px;line-height:1.5;color:#e4f7e9;max-width:495px}
+.ww57-homeHero .ww57-heroEmoji{font-size:clamp(60px,10vw,118px);filter:drop-shadow(0 12px 12px #092f2975)}
+.ww57-heroKicker{font-size:11px;text-transform:uppercase;letter-spacing:.18em;color:#d8eebf;font-weight:950}
+.ww57-homeGrid{display:grid;grid-template-columns:1.1fr 1fr;gap:16px;margin-top:18px}
+.ww57-tile{background:#fffefa;border:1px solid #dce5d5;border-radius:21px;padding:clamp(18px,3vw,25px);box-shadow:0 8px 20px #1b483410}
+.ww57-tile h2{font-size:21px;margin:0 0 9px;color:#214c3b}
+.ww57-tile p{margin:0 0 15px;color:#637466;font-size:14px;line-height:1.5}
+.ww57-tile .ww57-btn{width:100%}
+.ww57-mode{display:flex;gap:8px;margin-bottom:12px}
+.ww57-mode button{flex:1;min-width:0;border:1px solid #c6dacb;border-radius:12px;padding:12px 8px;background:#eaf2e9;color:#275c45;font-weight:850;cursor:pointer}
+.ww57-mode button[aria-pressed="true"]{background:#205d48;color:#fff;border-color:#205d48}
+.ww57-roomRow{display:flex;gap:8px}
+.ww57-roomRow input{width:100%;min-width:0;border:1px solid #bfcfbb;border-radius:13px;padding:13px 12px;font-size:19px;letter-spacing:.09em;color:#153e32;text-align:center;background:#fff}
+.ww57-roomRow .ww57-btn{width:auto;white-space:nowrap}
+.ww57-homeStrip{display:flex;gap:8px;align-items:center;flex-wrap:wrap;justify-content:space-between;margin-top:17px}
+.ww57-shortcuts{display:flex;flex-wrap:wrap;gap:8px}
+.ww57-shortcuts button{border:1px solid #d0ddd3;background:#f8fff9;border-radius:13px;padding:10px 13px;font-size:14px;color:#285440;font-weight:750;cursor:pointer}
+.ww57-status{font-size:13px;color:#426952;line-height:1.5}
+/* Interactive world HUD: one compact top row + one dock + original touch joystick */
+#game #graphicsBadge,#game #costumeLaunchGame,#game #teleportLaunch,#game #planetViewToggle,#game #questWorldGuide,#game #turnControls,#game #moveAssist,#game #ipadStepControls,#game #lookZoneHint,#game #questRoomHud,#game #questOfflineBadge,#game #mapBanner,#game #eggRadar,#game #raceHud,#game #secretBtn,#game #adminLaunchGame,#game #raceGoalMarker,#game #raceOpponentMarker,#game #worldSessionBar{display:none!important}
+#game #hud>.topbar,#game #hud>.nearby{display:none!important}
+#game #hud{pointer-events:none!important}
+#game #hud .bottomhud{position:absolute!important;inset:auto 0 0!important;display:flex!important;justify-content:flex-start!important;padding:0 0 calc(20px + env(safe-area-inset-bottom)) calc(19px + env(safe-area-inset-left))!important;pointer-events:none!important;width:100%!important}
+#game #hud .bottomhud .left-controls{pointer-events:auto!important}
+#game #hud .bottomhud .right-controls{display:none!important}
+#game #hud .joystick{width:112px!important;height:112px!important;min-width:112px!important;min-height:112px!important;background:#ecf8eb55!important;border:2px solid #ffffffa1!important;backdrop-filter:blur(4px)}
+#ww57-top{position:absolute;left:calc(12px + env(safe-area-inset-left));right:calc(12px + env(safe-area-inset-right));top:calc(10px + env(safe-area-inset-top));z-index:57;display:flex;align-items:center;gap:8px;pointer-events:auto}
+.ww57-hudStats{background:rgba(12,45,39,.84);backdrop-filter:blur(10px);border:1px solid #ffffff3d;color:#fff;padding:9px 13px;border-radius:14px;display:flex;align-items:center;gap:13px;font-size:13px;font-weight:850;min-height:48px;box-shadow:0 5px 20px #15292330}
+.ww57-hudStats span{white-space:nowrap}
+#ww57-top .ww57-topSpacer{flex:1}
+.ww57-quick{background:rgba(11,53,44,.88);color:#fff;border:1px solid #ffffff66;border-radius:13px;padding:10px 13px;min-height:47px;font-weight:850;font-size:13px;cursor:pointer;backdrop-filter:blur(9px);white-space:nowrap}
+#ww57-actionDock{position:absolute;bottom:calc(17px + env(safe-area-inset-bottom));right:calc(14px + env(safe-area-inset-right));z-index:57;display:flex;flex-direction:column;align-items:flex-end;gap:8px;pointer-events:auto}
+#ww57-actionDock #horseToggle,#ww57-actionDock #jump,#ww57-actionDock #rescue{all:unset!important;box-sizing:border-box!important;display:flex!important;justify-content:center!important;align-items:center!important;text-align:center!important;min-height:51px!important;width:132px!important;background:rgba(22,84,65,.93)!important;border:1px solid #ffffff6b!important;border-radius:16px!important;color:#fff!important;box-shadow:0 5px 0 #103a2fd9!important;font-family:inherit!important;font-size:14px!important;font-weight:950!important;cursor:pointer!important;pointer-events:auto!important;touch-action:manipulation!important;line-height:1.15!important;padding:8px!important}
+#ww57-actionDock #rescue{background:#efd17c!important;color:#263c22!important;box-shadow:0 5px 0 #ad8840!important}
+#ww57-actionDock #rescue:disabled{filter:grayscale(.75);opacity:.65!important;cursor:not-allowed!important}
+#ww57-actionDock #horseToggle{background:rgba(47,82,105,.92)!important}
+#ww57-actionDock #horseToggle small{display:none!important}
+#ww57-hint{position:absolute;bottom:calc(13px + env(safe-area-inset-bottom));left:50%;transform:translateX(-50%);color:#fff;background:#163d32a8;padding:7px 11px;border-radius:11px;font-size:12px;z-index:12;pointer-events:none;white-space:nowrap}
+/* In-game menu: only four clear destinations */
+#ww57-menu{position:absolute;inset:0;z-index:100;display:flex;align-items:center;justify-content:center;padding:15px;background:#0b2423a9;backdrop-filter:blur(7px);pointer-events:auto}
+#ww57-menu[hidden]{display:none!important}
+.ww57-menuBox{width:min(570px,100%);max-height:90dvh;overflow:auto;background:#fffef8;border-radius:25px;box-shadow:var(--ww57-shadow);padding:22px;color:#284b3e}
+.ww57-menuHead{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:18px}
+.ww57-menuHead h2{font-size:25px;margin:0;color:#1d543f}
+.ww57-close{border:0;background:#e7f0e6;border-radius:12px;min-width:45px;min-height:45px;font-size:22px;color:#215a43;cursor:pointer}
+.ww57-menuItems{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.ww57-menuItems button{border:1px solid #d3e0d3;border-radius:16px;background:#f1f7ee;color:#244f3e;min-height:96px;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:5px;padding:16px;text-align:left;font-size:15px;font-weight:850;cursor:pointer}
+.ww57-menuItems button span{font-size:28px}
+.ww57-menuFooter{display:flex;gap:8px;flex-wrap:wrap;margin-top:17px;justify-content:space-between;align-items:center}
+/* Reskinned original room join without destroying existing server handlers */
+#questLobbyModal{z-index:160!important;align-items:center!important;justify-content:center!important;padding:12px!important;background:#082c2bb0!important}
+#questLobbyModal>.dialog{display:none!important}
+#ww57-join{display:grid;width:min(550px,100%);max-height:94dvh;overflow-y:auto;gap:12px;background:#fffefa;border-radius:24px;padding:clamp(19px,3vw,29px);box-shadow:var(--ww57-shadow);color:#173f31}
+#ww57-join h2{font-size:25px;margin:0;color:#16583e}
+.ww57-codeChoices{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.ww57-codeChoices button{border:2px solid #d3e2cc;background:#eaf5e9;color:#19523f;border-radius:16px;min-height:83px;padding:12px 5px;cursor:pointer;display:grid;gap:4px;justify-items:center}
+.ww57-codeChoices button strong{font-size:27px;letter-spacing:.08em}
+.ww57-codeChoices button span{font-size:12px;font-weight:850}
+.ww57-codeChoices button:hover{border-color:#249372}
+#ww57-joinStatus{border-radius:11px;background:#e9f3e9;padding:10px;font-size:13px;color:#426450;line-height:1.35;min-height:36px}
+#ww57-join .ww57-roomRow{margin:0}
+#ww57-join .ww57-roomRow input{font-size:17px}
+.ww57-divider{height:1px;background:#dbe6db;margin:5px 0}
+/* rescue dialog presents exactly one locale, no duplicated question/answer lines */
+#questionModal .dialog{max-width:610px!important;padding:clamp(17px,3vw,26px)!important;border-radius:22px!important}
+#questionModal #qText,#questionModal #qZh{font-size:clamp(18px,3vw,25px);font-weight:820;line-height:1.35;color:#1c5443;margin:10px 0 17px}
+html[data-ww57-lang="en"] #questionModal #qZh{display:none!important}
+html[data-ww57-lang="zh"] #questionModal #qText{display:none!important}
+html[data-ww57-lang="en"] #options .opt em{display:none!important}
+html[data-ww57-lang="zh"] #options .opt{font-size:0!important}
+html[data-ww57-lang="zh"] #options .opt em{display:block!important;font-size:17px!important;font-style:normal!important;font-weight:840!important;color:inherit!important;line-height:1.4!important;margin:0!important}
+#questionModal .opt{font-size:16px!important;line-height:1.4!important}
+html[data-ww57-lang="zh"] #questionModal .opt{font-size:0!important}
+html[data-ww57-lang="zh"] #questionModal .opt em{font-size:16px!important}
+#teleportModal .dialog{max-width:740px!important}
+html[data-ww57-lang="en"] .tp-destination>small:not(.rescue-count){display:none!important}
+html[data-ww57-lang="zh"] .tp-destination>strong{display:none!important}
+#teleportModal .tp-destination{min-height:90px!important}
+#teleportModal #teleportMode{font-size:13px}
+#progressModal .dialog,#costumeModal .dialog,#resultModal .dialog,#boardModal .dialog{max-width:710px!important;border-radius:22px!important}
+#ww57-languageRoot{position:fixed;top:16px;right:16px;z-index:9999}
+/* Reorganize previously scattered floating buttons */
+#game #questRanksBtn,#game #adminEverywhere{display:none!important}
+@media(max-width:750px){.ww57-welcomeCard{grid-template-columns:1fr;padding:19px;gap:12px}.ww57-welcomeArt{min-height:140px}.ww57-welcomeRight h2{font-size:21px}.ww57-homeGrid{grid-template-columns:1fr}.ww57-homeHero .ww57-heroEmoji{font-size:70px}#ww57-hint{display:none!important}}
+@media(max-width:480px){#ww57-home{padding:14px 11px 25px}.ww57-homeHero{padding:19px 16px}.ww57-homeHero h1{font-size:29px}.ww57-homeHero .ww57-heroEmoji{font-size:52px}.ww57-tile{padding:15px}.ww57-homeTop{margin-bottom:10px}#ww57-top{gap:5px;left:8px;right:8px}.ww57-hudStats{gap:6px;padding:9px 7px;font-size:11px;min-height:43px}#ww57-top .ww57-quick{padding:9px 10px;min-height:43px;font-size:11px}#ww57-actionDock{bottom:calc(12px + env(safe-area-inset-bottom));right:10px;gap:7px}#ww57-actionDock #horseToggle,#ww57-actionDock #jump,#ww57-actionDock #rescue{width:108px!important;min-height:47px!important;font-size:12px!important;padding:5px!important}#game #hud .joystick{width:99px!important;height:99px!important;min-width:99px!important;min-height:99px!important}.ww57-roomRow{flex-wrap:wrap}.ww57-roomRow .ww57-btn{width:100%}.ww57-menuItems button{min-height:83px;padding:11px}.ww57-menuBox{padding:17px}}
+@media(max-height:530px) and (orientation:landscape){#ww57-top{top:4px}.ww57-hudStats{min-height:40px}#ww57-actionDock{bottom:5px;right:7px;flex-direction:row;gap:5px}#ww57-actionDock #horseToggle,#ww57-actionDock #jump,#ww57-actionDock #rescue{min-height:43px!important;width:92px!important;font-size:11px!important}#game #hud .bottomhud{padding-bottom:6px!important}#game #hud .joystick{width:79px!important;height:79px!important;min-width:79px!important;min-height:79px!important}}
+@media(prefers-reduced-motion:reduce){.ww57-btn{transition:none!important}}
+
+#ww57-authChoices .auth-picks{display:block!important;width:100%!important}
+#ww57-authChoices .auth-pick[data-auth-choice="visitor"]{width:100%!important;max-width:none!important}
+
+#questionModal #powers{display:none!important}
+
+/* v63: keep Admin accessible from Menu only, not floating above the game. */
+#adminEverywhere,#game #adminLaunchGame{display:none!important}
+#ww57-menuAdmin{display:flex}
+body:not(.role-admin) #ww57-menuAdmin{display:none!important}
+#ww63-connection{border-top:1px solid #d9e7dc;padding-top:12px;display:grid;gap:8px}
+.ww63-diagActions{display:flex;flex-wrap:wrap;align-items:center;gap:9px}
+#ww63-testOnline{border:0;border-radius:12px;background:#125d51;color:white;padding:11px 13px;min-height:44px;font-weight:850;cursor:pointer}
+#ww63-testOnline:disabled{opacity:.6;cursor:wait}
+#ww63-serverStatus{color:#166b74;text-decoration:underline;font-size:13px;font-weight:750}
+#ww63-diagResult{margin:0;line-height:1.5;color:#28534b;font-size:13px;overflow-wrap:anywhere}

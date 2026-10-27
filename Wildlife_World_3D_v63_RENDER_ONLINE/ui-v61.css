@@ -1,0 +1,51 @@
+/* Wildlife World v61 • Quest Hub: two clear challenges, ten habitats, compact progress. */
+#home{background:linear-gradient(130deg,#064853 0%,#147d83 52%,#7fc4a5 100%)!important;min-height:100dvh;}
+#ww57-home{display:none!important}
+#home .homewrap{display:block!important;max-width:1250px!important;padding:clamp(12px,2.2vw,26px)!important;margin:0 auto!important;box-sizing:border-box}
+#home #questHomePanel{display:block!important;background:linear-gradient(155deg,#0a5160 0%,#166e79 48%,#073c51 100%)!important;border:1px solid rgba(222,255,253,.26);border-radius:28px!important;box-shadow:0 20px 64px rgba(0,31,40,.28)!important;padding:clamp(17px,2.5vw,34px)!important;color:#f5ffff!important;margin:0 auto;}
+#questHomePanel *{box-sizing:border-box}
+#questHomePanel .v61-top{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:12px}
+#questHomePanel .v61-brand{display:flex;align-items:center;gap:9px;color:#d9ffea;font-weight:900;font-size:clamp(13px,1.3vw,16px);letter-spacing:.09em}
+#questHomePanel .v61-brandIcon{display:inline-grid;place-items:center;width:39px;height:39px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.25);border-radius:12px;font-size:22px}
+#questHomePanel .v61-topRight{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+#questHomePanel .v61-eyebrow{color:#a7e5dc;font-size:12px;letter-spacing:.1em;font-weight:800}
+#questHomePanel #v61-lang{border-radius:999px;background:#edfffb;color:#15575f;border:1px solid #bbebdf;min-height:43px;padding:10px 16px;cursor:pointer;font-weight:900;font-size:14px}
+#questHomePanel #v61-lang:focus-visible,#questHomePanel button:focus-visible{outline:4px solid #ffde6f!important;outline-offset:3px}
+#questHomePanel>h1{font-size:clamp(28px,4vw,47px)!important;line-height:1.15!important;margin:7px 0 9px!important;text-align:center!important;color:#fff!important;text-shadow:none!important;letter-spacing:-.02em!important}
+#questHomePanel>.questSubtitle{color:#d0f6f1!important;font-weight:650!important;max-width:750px;margin:0 auto 24px!important;font-size:clamp(13px,1.6vw,17px)!important;line-height:1.5!important}
+#questHomePanel>.earthSphereHero{display:none!important}
+#questHomePanel .questModeGrid{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:clamp(12px,1.7vw,22px)!important;margin-top:8px!important}
+#questHomePanel .questModeButton{min-width:0;min-height:230px!important;display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;gap:14px!important;text-align:center!important;border:3px solid #f3fff8!important;border-radius:28px!important;padding:25px 16px!important;background:linear-gradient(130deg,#d9ffe7 0%,#96df94 100%)!important;color:#174a58!important;box-shadow:0 8px 0 #032f3a59,0 15px 22px #002b3645!important;cursor:pointer;transition:transform .16s,filter .16s;font-family:inherit}
+#questHomePanel .questModeButton.senior{background:linear-gradient(130deg,#eae5ff 0%,#9bbef9 100%)!important}
+#questHomePanel .questModeButton:hover{transform:translateY(-4px);filter:brightness(1.03)}
+#questHomePanel .questModeButton:active{transform:translateY(3px)}
+#questHomePanel .questModeButton .questIcon{font-size:clamp(39px,4.6vw,60px)!important;line-height:1!important}
+#questHomePanel .questModeButton strong{font-size:clamp(21px,2.25vw,32px)!important;font-weight:1000!important;letter-spacing:.015em!important;line-height:1.15!important;color:#164559!important}
+#questHomePanel .questModeButton small{font-size:clamp(12px,1.2vw,15px)!important;color:#24536a!important;font-weight:750!important;line-height:1.4}
+#questHomePanel .questWorldStrip{display:flex!important;flex-wrap:wrap!important;justify-content:center!important;gap:10px!important;margin:26px auto 25px!important}
+#questHomePanel .questWorldStrip span{border:1.5px solid #c3eded9e!important;border-radius:999px!important;background:rgba(228,255,255,.16)!important;padding:9px 14px!important;color:#f4fcff!important;font-size:clamp(12px,1vw,14px)!important;font-weight:850!important;line-height:1.3}
+#questHomePanel #questStatsBelow{background:linear-gradient(150deg,#e2f5f7,#b8e0ed)!important;border:2px solid #9ee5e4!important;border-radius:26px!important;padding:clamp(17px,2.5vw,28px)!important;box-shadow:0 9px 0 #03374637,0 15px 24px #002e3942!important;color:#20576e!important}
+#questHomePanel .questBottomHeading{font-size:clamp(18px,2.1vw,28px)!important;font-weight:1000!important;color:#176180!important;margin:0 0 18px!important;line-height:1.25!important}
+#questHomePanel #earthHomeStats{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:15px!important}
+#questHomePanel #earthHomeStats>div{background:#fff!important;min-width:0!important;min-height:118px!important;padding:15px 10px!important;border:1px solid #a8dbe6!important;border-radius:22px!important;display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;gap:6px!important;font-size:27px!important;box-shadow:none!important}
+#questHomePanel #earthHomeStats strong{font-size:clamp(15px,1.6vw,22px)!important;line-height:1.3!important;color:#224e65!important;font-weight:900!important}
+#questHomePanel #earthHomeStats span{font-size:clamp(11px,1.1vw,14px)!important;color:#50778b!important;font-weight:680!important}
+#questHomePanel .questMenuFoot{display:flex!important;gap:12px!important;justify-content:center!important;flex-wrap:wrap!important;margin-top:24px!important}
+#questHomePanel .questMenuFoot button{min-height:49px!important;background:linear-gradient(125deg,#166695,#18a2a0)!important;color:#faffff!important;border:none!important;border-radius:14px!important;padding:10px 16px!important;box-shadow:0 5px 0 #0c56688c!important;cursor:pointer;font-size:clamp(12px,1.3vw,16px)!important;line-height:1.3!important;font-weight:900!important}
+#questHomePanel .questMenuFoot button:active{transform:translateY(2px);box-shadow:0 2px 0 #0c56688c!important}
+#home [data-mode="explore"],#ww57-explore,#home .start.free,#home #ipadPracticeNow{display:none!important}
+@media(max-width:700px){
+ #questHomePanel .questModeGrid{grid-template-columns:1fr!important}
+ #questHomePanel .questModeButton{min-height:160px!important;padding:17px 11px!important;gap:9px!important}
+ #questHomePanel .questModeButton .questIcon{font-size:40px!important}
+ #questHomePanel .questWorldStrip{gap:6px!important;margin:17px auto!important}
+ #questHomePanel .questWorldStrip span{padding:7px 10px!important;font-size:11px!important}
+ #questHomePanel #earthHomeStats{gap:7px!important}
+ #questHomePanel #earthHomeStats>div{min-height:95px!important;padding:9px 5px!important;font-size:21px!important}
+ #questHomePanel #earthHomeStats strong{font-size:clamp(11px,3vw,16px)!important}
+ #questHomePanel #earthHomeStats span{font-size:clamp(10px,2.1vw,12px)!important}
+ #questHomePanel .questMenuFoot button{flex:1 1 calc(50% - 10px);min-width:0}
+ #questHomePanel .v61-eyebrow{display:none}
+}
+@media(max-width:380px){#questHomePanel .questMenuFoot button{flex-basis:100%}}
+@media(prefers-reduced-motion:reduce){#questHomePanel .questModeButton{transition:none}}
